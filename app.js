@@ -51,6 +51,11 @@ const app = express();
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res)=>{
+  res.status(200).json({message:"welcome to this project"})
+})
+
+
 app.use('/api/routes', authRoutes);
 app.use('/api/notes', noteRoutes);
 
@@ -70,6 +75,3 @@ mongoose
 
 module.exports = app;
 
-app.get('/', (res, req)=>{
-  res.status(200).json({message:"welcome to this project"})
-})
