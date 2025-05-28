@@ -69,3 +69,7 @@ mongoose
   .catch((err) => console.error('MongoDB connection error:', err));
 
 module.exports = app;
+
+app.get('/', (res, req)=>{
+  res.status(200).json({message:"welcome to this project"})
+})
